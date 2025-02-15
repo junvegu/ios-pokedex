@@ -117,6 +117,9 @@
 		AD6F462C2D60D18000B34350 /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				AD6F467C2D612EC700B34350 /* Presentation */,
+				AD6F467B2D612EC200B34350 /* Domain */,
+				AD6F467A2D612EBA00B34350 /* Infraestructure */,
 				AD6F466D2D61229900B34350 /* Application */,
 				AD6F466C2D61228D00B34350 /* Resources */,
 				AD6F46312D60D18000B34350 /* ViewController.swift */,
@@ -180,6 +183,59 @@
 				AD6F46722D6122DD00B34350 /* Montserrat-Medium.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		AD6F467A2D612EBA00B34350 /* Infraestructure */ = {
+			isa = PBXGroup;
+			children = (
+				AD6F46822D612EF900B34350 /* Mappers */,
+				AD6F46812D612EF400B34350 /* Responses */,
+				AD6F46802D612EEA00B34350 /* Repositories */,
+				AD6F467E2D612EDD00B34350 /* Datasource */,
+			);
+			path = Infraestructure;
+			sourceTree = "<group>";
+		};
+		AD6F467B2D612EC200B34350 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		AD6F467C2D612EC700B34350 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		AD6F467E2D612EDD00B34350 /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Datasource;
+			sourceTree = "<group>";
+		};
+		AD6F46802D612EEA00B34350 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		AD6F46812D612EF400B34350 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		AD6F46822D612EF900B34350 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mappers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
