@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,10 @@
 		AD6F46452D60D18200B34350 /* PokedexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6F46442D60D18200B34350 /* PokedexTests.swift */; };
 		AD6F464F2D60D18200B34350 /* PokedexUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6F464E2D60D18200B34350 /* PokedexUITests.swift */; };
 		AD6F46512D60D18200B34350 /* PokedexUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6F46502D60D18200B34350 /* PokedexUITestsLaunchTests.swift */; };
+		AD6F465F2D60DFEA00B34350 /* BDRModel in Frameworks */ = {isa = PBXBuildFile; productRef = AD6F465E2D60DFEA00B34350 /* BDRModel */; };
+		AD6F46622D60DFF700B34350 /* BDRCoreNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = AD6F46612D60DFF700B34350 /* BDRCoreNetwork */; };
+		AD6F46652D60E00C00B34350 /* BDRUIComponents in Frameworks */ = {isa = PBXBuildFile; productRef = AD6F46642D60E00C00B34350 /* BDRUIComponents */; };
+		AD6F466B2D60E04700B34350 /* UIUtils in Frameworks */ = {isa = PBXBuildFile; productRef = AD6F466A2D60E04700B34350 /* UIUtils */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD6F465F2D60DFEA00B34350 /* BDRModel in Frameworks */,
+				AD6F46652D60E00C00B34350 /* BDRUIComponents in Frameworks */,
+				AD6F466B2D60E04700B34350 /* UIUtils in Frameworks */,
+				AD6F46622D60DFF700B34350 /* BDRCoreNetwork in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +151,12 @@
 			dependencies = (
 			);
 			name = Pokedex;
+			packageProductDependencies = (
+				AD6F465E2D60DFEA00B34350 /* BDRModel */,
+				AD6F46612D60DFF700B34350 /* BDRCoreNetwork */,
+				AD6F46642D60E00C00B34350 /* BDRUIComponents */,
+				AD6F466A2D60E04700B34350 /* UIUtils */,
+			);
 			productName = Pokedex;
 			productReference = AD6F462A2D60D18000B34350 /* Pokedex.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +229,12 @@
 				Base,
 			);
 			mainGroup = AD6F46212D60D18000B34350;
+			packageReferences = (
+				AD6F465D2D60DFEA00B34350 /* XCLocalSwiftPackageReference "BDRModel" */,
+				AD6F46602D60DFF700B34350 /* XCLocalSwiftPackageReference "BDRCoreNetwork" */,
+				AD6F46632D60E00C00B34350 /* XCLocalSwiftPackageReference "BDRUIComponents" */,
+				AD6F46692D60E04700B34350 /* XCLocalSwiftPackageReference "UIUtils" */,
+			);
 			productRefGroup = AD6F462B2D60D18000B34350 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -609,6 +629,44 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		AD6F465D2D60DFEA00B34350 /* XCLocalSwiftPackageReference "BDRModel" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = BDRModel;
+		};
+		AD6F46602D60DFF700B34350 /* XCLocalSwiftPackageReference "BDRCoreNetwork" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = BDRCoreNetwork;
+		};
+		AD6F46632D60E00C00B34350 /* XCLocalSwiftPackageReference "BDRUIComponents" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = BDRUIComponents;
+		};
+		AD6F46692D60E04700B34350 /* XCLocalSwiftPackageReference "UIUtils" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = UIUtils;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AD6F465E2D60DFEA00B34350 /* BDRModel */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BDRModel;
+		};
+		AD6F46612D60DFF700B34350 /* BDRCoreNetwork */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BDRCoreNetwork;
+		};
+		AD6F46642D60E00C00B34350 /* BDRUIComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BDRUIComponents;
+		};
+		AD6F466A2D60E04700B34350 /* UIUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UIUtils;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AD6F46222D60D18000B34350 /* Project object */;
 }
