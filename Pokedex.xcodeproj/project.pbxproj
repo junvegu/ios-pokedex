@@ -20,6 +20,11 @@
 		AD6F46622D60DFF700B34350 /* BDRCoreNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = AD6F46612D60DFF700B34350 /* BDRCoreNetwork */; };
 		AD6F46652D60E00C00B34350 /* BDRUIComponents in Frameworks */ = {isa = PBXBuildFile; productRef = AD6F46642D60E00C00B34350 /* BDRUIComponents */; };
 		AD6F466B2D60E04700B34350 /* UIUtils in Frameworks */ = {isa = PBXBuildFile; productRef = AD6F466A2D60E04700B34350 /* UIUtils */; };
+		AD6F46742D6122DD00B34350 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD6F46702D6122DD00B34350 /* Montserrat-Light.ttf */; };
+		AD6F46752D6122DD00B34350 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD6F46712D6122DD00B34350 /* Montserrat-Bold.ttf */; };
+		AD6F46762D6122DD00B34350 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD6F46722D6122DD00B34350 /* Montserrat-Medium.ttf */; };
+		AD6F46772D6122DD00B34350 /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD6F46732D6122DD00B34350 /* Montserrat-ExtraBold.ttf */; };
+		AD6F46792D6123C300B34350 /* PokedexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6F46782D6123C300B34350 /* PokedexApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,11 @@
 		AD6F464A2D60D18200B34350 /* PokedexUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokedexUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD6F464E2D60D18200B34350 /* PokedexUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexUITests.swift; sourceTree = "<group>"; };
 		AD6F46502D60D18200B34350 /* PokedexUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AD6F46702D6122DD00B34350 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		AD6F46712D6122DD00B34350 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		AD6F46722D6122DD00B34350 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		AD6F46732D6122DD00B34350 /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+		AD6F46782D6123C300B34350 /* PokedexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,13 +117,11 @@
 		AD6F462C2D60D18000B34350 /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
-				AD6F462D2D60D18000B34350 /* AppDelegate.swift */,
-				AD6F462F2D60D18000B34350 /* SceneDelegate.swift */,
+				AD6F466D2D61229900B34350 /* Application */,
+				AD6F466C2D61228D00B34350 /* Resources */,
 				AD6F46312D60D18000B34350 /* ViewController.swift */,
 				AD6F46332D60D18000B34350 /* Main.storyboard */,
-				AD6F46362D60D18200B34350 /* Assets.xcassets */,
 				AD6F46382D60D18200B34350 /* LaunchScreen.storyboard */,
-				AD6F463B2D60D18200B34350 /* Info.plist */,
 			);
 			path = Pokedex;
 			sourceTree = "<group>";
@@ -133,6 +141,45 @@
 				AD6F46502D60D18200B34350 /* PokedexUITestsLaunchTests.swift */,
 			);
 			path = PokedexUITests;
+			sourceTree = "<group>";
+		};
+		AD6F466C2D61228D00B34350 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AD6F463B2D60D18200B34350 /* Info.plist */,
+				AD6F466F2D6122AD00B34350 /* Fonts */,
+				AD6F466E2D6122A500B34350 /* Assets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AD6F466D2D61229900B34350 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				AD6F462D2D60D18000B34350 /* AppDelegate.swift */,
+				AD6F462F2D60D18000B34350 /* SceneDelegate.swift */,
+				AD6F46782D6123C300B34350 /* PokedexApp.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		AD6F466E2D6122A500B34350 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				AD6F46362D60D18200B34350 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		AD6F466F2D6122AD00B34350 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AD6F46712D6122DD00B34350 /* Montserrat-Bold.ttf */,
+				AD6F46732D6122DD00B34350 /* Montserrat-ExtraBold.ttf */,
+				AD6F46702D6122DD00B34350 /* Montserrat-Light.ttf */,
+				AD6F46722D6122DD00B34350 /* Montserrat-Medium.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,8 +298,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD6F46752D6122DD00B34350 /* Montserrat-Bold.ttf in Resources */,
+				AD6F46742D6122DD00B34350 /* Montserrat-Light.ttf in Resources */,
 				AD6F46372D60D18200B34350 /* Assets.xcassets in Resources */,
 				AD6F463A2D60D18200B34350 /* Base in Resources */,
+				AD6F46762D6122DD00B34350 /* Montserrat-Medium.ttf in Resources */,
+				AD6F46772D6122DD00B34350 /* Montserrat-ExtraBold.ttf in Resources */,
 				AD6F46352D60D18000B34350 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD6F46792D6123C300B34350 /* PokedexApp.swift in Sources */,
 				AD6F46322D60D18000B34350 /* ViewController.swift in Sources */,
 				AD6F462E2D60D18000B34350 /* AppDelegate.swift in Sources */,
 				AD6F46302D60D18000B34350 /* SceneDelegate.swift in Sources */,
