@@ -78,8 +78,8 @@
             filePath = "Pokedex/Infraestructure/Datasource/PokemonRemoteDataSource.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "fetchPokemons(limit:offset:)"
             landmarkType = "7">
          </BreakpointContent>

@@ -12,7 +12,7 @@ extension PokemonListResponse {
             let id = offset + index + 1
             return Pokemon(
                 id: id,
-                name: item.name,
+                name: item.name.capitalized,
                 url: item.url
             )
         }

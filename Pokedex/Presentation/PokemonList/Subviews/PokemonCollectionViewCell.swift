@@ -48,10 +48,10 @@ class PokemonCollectionViewCell: UICollectionViewCell, ReusableView {
     }
     
     private func setupUI() {
-        contentView.backgroundColor = .clear
+        contentView.backgroundColor = .primary
         contentView.layer.cornerRadius = 16
         contentView.layer.masksToBounds = true
-        
+        contentView.addBottomShadow()
         contentView.addSubview(recipeImageView)
         contentView.addSubview(gradientView)
         contentView.addSubview(titleLabel)

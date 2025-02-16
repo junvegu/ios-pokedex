@@ -12,7 +12,7 @@ import UIKit
 
 protocol PokemonListViewBuilderProtocol {
     func setSearchPokemonsUseCase(_ useCase: SearchPokemonsUseCaseProtocol) -> Self
-    func build() -> UIViewController
+    func build() -> PokemonListViewController
 }
 
 final class PokemonListViewBuilder: PokemonListViewBuilderProtocol {
@@ -33,7 +33,7 @@ final class PokemonListViewBuilder: PokemonListViewBuilderProtocol {
         return self
     }
 
-    func build() -> UIViewController {
+    func build() -> PokemonListViewController {
         guard let searchUseCase = searchPokemonsUseCase else {
             fatalError("SearchPokemonsUseCase must be set before building PokemonViewController")
         }
@@ -47,6 +47,7 @@ final class PokemonListViewBuilder: PokemonListViewBuilderProtocol {
             searchPokemonsUseCase: searchUseCase
         )
         let viewController = PokemonListViewController(viewModel: viewModel)
+        viewController.navigationItem.title = "Encuentra tu Pokémon"
         return viewController
     }
 }

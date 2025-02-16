@@ -30,10 +30,8 @@ final class PokemonRemoteDataSource: PokemonRemoteDataSourceProtocol {
                             continuation.resume(throwing: BDRCoreNetworkError.malformedRequest)
                             return
                         }
-                        
                         let pokemons = response.toDomain()
                         continuation.resume(returning: pokemons)
-                        
                     case .failure(let error):
                         continuation.resume(throwing: error)
                     }

@@ -16,7 +16,10 @@ final class ModulesFactoryDefault {}
 
 extension ModulesFactoryDefault: PokemonModulesFactory {
     func buildListPokemons(coordinator: PokemonsCoordinator) -> PokemonListView? {
-        return nil
+        return PokemonListViewBuilder()
+            .setGetFirstGenPokemonsUseCase()
+            .setSearchPokemonsUseCase()
+            .build()
     }
     
     func buildDetailPokemon(with pokemon: Pokemon, coordinator: PokemonsCoordinatorDelegate) -> RYDetailRecipeView? {
