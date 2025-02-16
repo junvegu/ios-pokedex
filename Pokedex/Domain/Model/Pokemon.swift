@@ -13,6 +13,6 @@ struct Pokemon {
     let url: String
     
     var imageURL: String {
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(id).png"
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/\(id).png"
     }
 }

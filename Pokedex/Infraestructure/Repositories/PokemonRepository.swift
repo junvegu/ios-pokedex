@@ -14,7 +14,7 @@ protocol PokemonRepositoryProtocol {
 final class PokemonRepository: PokemonRepositoryProtocol {
     private let remoteDataSource: PokemonRemoteDataSourceProtocol
     
-    init(remoteDataSource: PokemonRemoteDataSourceProtocol) {
+    init(remoteDataSource: PokemonRemoteDataSourceProtocol = PokemonRemoteDataSource()) {
         self.remoteDataSource = remoteDataSource
     }
     

@@ -16,7 +16,7 @@ final class PokemonRemoteDataSource: PokemonRemoteDataSourceProtocol {
     }
     
     func fetchPokemons(limit: Int, offset: Int) async throws -> [Pokemon] {
-        let endpoint = PokemonEndpoint.list
+        let endpoint = PokemonEndpoint.list(limit: limit, offSet: offset)
         return try await withCheckedThrowingContinuation { continuation in
             networkRequest
                 .setEndpoint(endpoint.path, .v2)

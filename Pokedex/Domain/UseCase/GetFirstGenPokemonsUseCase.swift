@@ -15,7 +15,7 @@ final class GetFirstGenPokemonsUseCase: GetFirstGenPokemonsUseCaseProtocol {
     private let firstGenLimit = 151
     private let firstGenOffset = 0
     
-    init(repository: PokemonRepositoryProtocol) {
+    init(repository: PokemonRepositoryProtocol = PokemonRepository()) {
         self.repository = repository
     }
     

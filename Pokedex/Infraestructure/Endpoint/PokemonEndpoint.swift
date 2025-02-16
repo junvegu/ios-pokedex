@@ -9,7 +9,7 @@ import BDRCoreNetwork
 import Alamofire
 
 enum PokemonEndpoint  {
-    case list
+    case list(limit: Int, offSet: Int)
     
     var baseURL: String {
         return BDRCoreNetwork.shared.config.urlBase
@@ -30,6 +30,9 @@ enum PokemonEndpoint  {
     }
     
     var parameters: [String: Any]? {
-       return nil
+        switch self {
+        case .list(let limit, let offSet):
+            return ["limit": limit, "offset": offSet]
+        }
     }
 }
