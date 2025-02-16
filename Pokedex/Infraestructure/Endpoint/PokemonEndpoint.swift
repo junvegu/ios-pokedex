@@ -10,7 +10,8 @@ import Alamofire
 
 enum PokemonEndpoint  {
     case list(limit: Int, offSet: Int)
-    
+    case detail(id: Int)
+
     var baseURL: String {
         return BDRCoreNetwork.shared.config.urlBase
     }
@@ -19,12 +20,14 @@ enum PokemonEndpoint  {
         switch self {
         case .list:
             return "pokemon/"
+        case .detail(let id):
+            return "pokemon/\(id)"
         }
     }
 
     var method: HTTPMethod {
         switch self {
-        case .list:
+        case .list, .detail:
             return .get
         }
     }
@@ -33,6 +36,8 @@ enum PokemonEndpoint  {
         switch self {
         case .list(let limit, let offSet):
             return ["limit": limit, "offset": offSet]
+        case .detail:
+            return nil
         }
     }
 }

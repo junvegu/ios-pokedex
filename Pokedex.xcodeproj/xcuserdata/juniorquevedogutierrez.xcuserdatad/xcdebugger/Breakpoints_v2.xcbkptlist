@@ -48,7 +48,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
             endingLineNumber = "20"
-            landmarkName = "fetchPokemons(limit:offset:)"
+            landmarkName = "init(networkRequest:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -96,7 +96,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
             endingLineNumber = "19"
-            landmarkName = "fetchPokemons(limit:offset:)"
+            landmarkName = "init(networkRequest:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

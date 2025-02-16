@@ -9,4 +9,5 @@ import Foundation
 
 protocol PokemonRemoteDataSourceProtocol {
     func fetchPokemons(limit: Int, offset: Int) async throws -> [Pokemon]
+    func fetchPokemonDetail(id: Int) async throws -> PokemonDetail
 }
