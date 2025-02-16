@@ -50,6 +50,11 @@
 		AD6F46CB2D61BF2900B34350 /* PokemonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6F46B82D61BDB400B34350 /* PokemonListViewModel.swift */; };
 		AD6F46CE2D61C00100B34350 /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6F46CD2D61C00100B34350 /* PokemonDetailViewController.swift */; };
 		AD6F46D02D61C24600B34350 /* SearchPokemonByText.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6F46CF2D61C24600B34350 /* SearchPokemonByText.swift */; };
+		AD6F46D22D628DF300B34350 /* MockPokemonRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6F46D12D628DF300B34350 /* MockPokemonRemoteDataSource.swift */; };
+		AD6F46D42D628E4900B34350 /* PokemonSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6F46D32D628E4900B34350 /* PokemonSnapshotTests.swift */; };
+		AD6F46D72D628EC600B34350 /* InlineSnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = AD6F46D62D628EC600B34350 /* InlineSnapshotTesting */; };
+		AD6F46D92D628EC600B34350 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = AD6F46D82D628EC600B34350 /* SnapshotTesting */; };
+		AD6F46DB2D628EC600B34350 /* SnapshotTestingCustomDump in Frameworks */ = {isa = PBXBuildFile; productRef = AD6F46DA2D628EC600B34350 /* SnapshotTestingCustomDump */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +118,8 @@
 		AD6F46C12D61BEB000B34350 /* PokemonCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCoordinator.swift; sourceTree = "<group>"; };
 		AD6F46CD2D61C00100B34350 /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
 		AD6F46CF2D61C24600B34350 /* SearchPokemonByText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPokemonByText.swift; sourceTree = "<group>"; };
+		AD6F46D12D628DF300B34350 /* MockPokemonRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPokemonRemoteDataSource.swift; sourceTree = "<group>"; };
+		AD6F46D32D628E4900B34350 /* PokemonSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonSnapshotTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +138,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD6F46DB2D628EC600B34350 /* SnapshotTestingCustomDump in Frameworks */,
+				AD6F46D72D628EC600B34350 /* InlineSnapshotTesting in Frameworks */,
+				AD6F46D92D628EC600B34350 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +351,7 @@
 			children = (
 				AD6F46982D61AB6C00B34350 /* MockPokemonRepository.swift */,
 				AD6F46992D61AB6C00B34350 /* MockNetworkRequest.swift */,
+				AD6F46D12D628DF300B34350 /* MockPokemonRemoteDataSource.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -383,6 +394,7 @@
 		AD6F46AA2D61AC4400B34350 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				AD6F46D32D628E4900B34350 /* PokemonSnapshotTests.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -465,6 +477,11 @@
 				AD6F46422D60D18200B34350 /* PBXTargetDependency */,
 			);
 			name = PokedexTests;
+			packageProductDependencies = (
+				AD6F46D62D628EC600B34350 /* InlineSnapshotTesting */,
+				AD6F46D82D628EC600B34350 /* SnapshotTesting */,
+				AD6F46DA2D628EC600B34350 /* SnapshotTestingCustomDump */,
+			);
 			productName = PokedexTests;
 			productReference = AD6F46402D60D18200B34350 /* PokedexTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -525,6 +542,7 @@
 				AD6F46602D60DFF700B34350 /* XCLocalSwiftPackageReference "BDRCoreNetwork" */,
 				AD6F46632D60E00C00B34350 /* XCLocalSwiftPackageReference "BDRUIComponents" */,
 				AD6F46692D60E04700B34350 /* XCLocalSwiftPackageReference "UIUtils" */,
+				AD6F46D52D628EC600B34350 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = AD6F462B2D60D18000B34350 /* Products */;
 			projectDirPath = "";
@@ -608,9 +626,11 @@
 				AD6F46A32D61AB6C00B34350 /* GetFirstGenPokemonsUseCaseTests.swift in Sources */,
 				AD6F469F2D61AB6C00B34350 /* MockPokemonRepository.swift in Sources */,
 				AD6F46A22D61AB6C00B34350 /* SpyPokemonRemoteDataSource.swift in Sources */,
+				AD6F46D42D628E4900B34350 /* PokemonSnapshotTests.swift in Sources */,
 				AD6F469D2D61AB6C00B34350 /* PokemonRepositoryTests.swift in Sources */,
 				AD6F469E2D61AB6C00B34350 /* PokemonRemoteDataSourceTests.swift in Sources */,
 				AD6F46A12D61AB6C00B34350 /* PokemonStub.swift in Sources */,
+				AD6F46D22D628DF300B34350 /* MockPokemonRemoteDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -973,6 +993,17 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		AD6F46D52D628EC600B34350 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.18.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		AD6F465E2D60DFEA00B34350 /* BDRModel */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -989,6 +1020,21 @@
 		AD6F466A2D60E04700B34350 /* UIUtils */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UIUtils;
+		};
+		AD6F46D62D628EC600B34350 /* InlineSnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD6F46D52D628EC600B34350 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = InlineSnapshotTesting;
+		};
+		AD6F46D82D628EC600B34350 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD6F46D52D628EC600B34350 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+		AD6F46DA2D628EC600B34350 /* SnapshotTestingCustomDump */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD6F46D52D628EC600B34350 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTestingCustomDump;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
