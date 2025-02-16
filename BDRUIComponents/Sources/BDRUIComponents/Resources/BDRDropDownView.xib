@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BDRDropDownView" customModule="BDRUIComponents">
+            <connections>
+                <outlet property="backgroundStyle" destination="iN0-l3-epB" id="rpv-XD-WFC"/>
+                <outlet property="cardView" destination="kNh-cD-eac" id="OSr-Iq-BYm"/>
+                <outlet property="dropDownTextField" destination="IfZ-jX-cUj" id="b9w-91-Iea"/>
+                <outlet property="textField" destination="gxa-ib-Guj" id="87a-n1-dLH"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gxa-ib-Guj" customClass="BDRMaterialTextField" customModule="BDRUIComponents">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="31"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kNh-cD-eac">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IfZ-jX-cUj" customClass="DropDownTextField" customModule="BDRUIComponents">
+                            <rect key="frame" x="8" y="14" width="398" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="NDi-KU-eol"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowDropDown" translatesAutoresizingMaskIntoConstraints="NO" id="a0V-N5-gaY">
+                            <rect key="frame" x="382" y="28.5" width="16" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="16" id="oWI-tJ-wfv"/>
+                                <constraint firstAttribute="height" constant="16" id="xKg-an-zuS"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="IfZ-jX-cUj" secondAttribute="trailing" constant="8" id="2E9-SZ-aLH"/>
+                        <constraint firstItem="a0V-N5-gaY" firstAttribute="centerY" secondItem="kNh-cD-eac" secondAttribute="centerY" constant="4" id="5vD-4W-VK1"/>
+                        <constraint firstItem="IfZ-jX-cUj" firstAttribute="leading" secondItem="kNh-cD-eac" secondAttribute="leading" constant="8" id="7Qa-yK-Uxy"/>
+                        <constraint firstItem="IfZ-jX-cUj" firstAttribute="centerY" secondItem="kNh-cD-eac" secondAttribute="centerY" constant="4" id="94w-O3-ZCw"/>
+                        <constraint firstAttribute="trailing" secondItem="a0V-N5-gaY" secondAttribute="trailing" constant="16" id="RwW-0Q-njU"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fhY-WQ-dns"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="gxa-ib-Guj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="8ks-YG-FBn"/>
+                <constraint firstItem="gxa-ib-Guj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="NtH-Au-gSo"/>
+                <constraint firstItem="fhY-WQ-dns" firstAttribute="bottom" secondItem="gxa-ib-Guj" secondAttribute="bottom" id="cL7-1I-gwY"/>
+                <constraint firstItem="kNh-cD-eac" firstAttribute="leading" secondItem="fhY-WQ-dns" secondAttribute="leading" id="eDB-PY-607"/>
+                <constraint firstAttribute="bottom" secondItem="kNh-cD-eac" secondAttribute="bottom" id="gtt-wY-6No"/>
+                <constraint firstItem="fhY-WQ-dns" firstAttribute="trailing" secondItem="kNh-cD-eac" secondAttribute="trailing" id="kxB-hF-Abj"/>
+                <constraint firstAttribute="trailing" secondItem="gxa-ib-Guj" secondAttribute="trailing" id="p7a-bm-u9N"/>
+                <constraint firstItem="kNh-cD-eac" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="sdD-nF-DWp"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="150.72463768115944" y="-272.87946428571428"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="gxa-ib-Guj">
+            <size key="intrinsicContentSize" width="32" height="34"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="arrowDropDown" width="480" height="480"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

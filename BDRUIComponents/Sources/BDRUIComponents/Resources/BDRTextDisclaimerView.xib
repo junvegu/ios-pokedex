@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BDRTextDisclaimerView" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundStyle" destination="iN0-l3-epB" id="g8w-8F-bC4"/>
+                <outlet property="titleLabel" destination="aDW-4b-0pc" id="m9H-WK-uwQ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="59"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EUx-yw-xQQ">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
+                    <color key="backgroundColor" name="SeparatorColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="xHV-r7-Goy"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDW-4b-0pc">
+                    <rect key="frame" x="16" y="19" width="382" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="TextDisclaimerColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdD-ER-kJb">
+                    <rect key="frame" x="0.0" y="58" width="414" height="1"/>
+                    <color key="backgroundColor" name="SeparatorColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="wrk-lH-p8h"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" name="DisclaimerColor"/>
+            <constraints>
+                <constraint firstItem="EUx-yw-xQQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="EtU-fd-NRo"/>
+                <constraint firstAttribute="trailing" secondItem="EUx-yw-xQQ" secondAttribute="trailing" id="L2b-Uc-IIk"/>
+                <constraint firstAttribute="trailing" secondItem="aDW-4b-0pc" secondAttribute="trailing" constant="16" id="L9y-w7-678"/>
+                <constraint firstItem="aDW-4b-0pc" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="LRj-TA-PIU"/>
+                <constraint firstItem="aDW-4b-0pc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="SdC-48-7Jl"/>
+                <constraint firstAttribute="bottom" secondItem="pdD-ER-kJb" secondAttribute="bottom" id="YmV-ZG-tnl"/>
+                <constraint firstAttribute="trailing" secondItem="pdD-ER-kJb" secondAttribute="trailing" id="ZL2-5e-LuP"/>
+                <constraint firstItem="EUx-yw-xQQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="sd1-mk-9iA"/>
+                <constraint firstItem="pdD-ER-kJb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yV2-ed-4Ed"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="147.82608695652175" y="-235.37946428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="DisclaimerColor">
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SeparatorColor">
+            <color red="0.23499999940395355" green="0.23499999940395355" blue="0.2630000114440918" alpha="0.3580000102519989" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextDisclaimerColor">
+            <color red="0.23499999940395355" green="0.23499999940395355" blue="0.2630000114440918" alpha="0.59799998998641968" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
