@@ -1,0 +1,72 @@
+name: iOS Pokedex CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    name: Build and Test Pokedex scheme using iPhone simulator
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build
+        env:
+          scheme: "Pokedex" 
+          platform: "iOS Simulator"
+        run: |
+          # Obtiene el primer simulador disponible
+          device=$(xcrun xctrace list devices 2>&1 | grep -oE 'iPhone.*?[^\(]+' | head -1 | awk '{$1=$1;print}' | sed -e "s/ Simulator$//")
+
+          # Identifica si usar .xcworkspace o .xcodeproj
+          if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then 
+            filetype_parameter="workspace" 
+            file_to_build="`ls -A | grep -i \\.xcworkspace\$`"
+          else 
+            filetype_parameter="project" 
+            file_to_build="`ls -A | grep -i \\.xcodeproj\$`"
+          fi
+          file_to_build=$(echo $file_to_build | awk '{$1=$1;print}')
+
+          echo "Usando esquema: $scheme"
+          echo "Archivo a compilar: $file_to_build"
+          echo "Simulador: $device"
+
+          # Compilar para pruebas
+          xcodebuild build-for-testing \
+            -scheme "$scheme" \
+            -"$filetype_parameter" "$file_to_build" \
+            -destination "platform=$platform,name=$device"
+
+      - name: Test
+        env:
+          scheme: "Pokedex" 
+          platform: "iOS Simulator"
+        run: |
+          # Obtiene el primer simulador disponible
+          device=$(xcrun xctrace list devices 2>&1 | grep -oE 'iPhone.*?[^\(]+' | head -1 | awk '{$1=$1;print}' | sed -e "s/ Simulator$//")
+
+          # Identifica si usar .xcworkspace o .xcodeproj
+          if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then 
+            filetype_parameter="workspace" 
+            file_to_build="`ls -A | grep -i \\.xcworkspace\$`"
+          else 
+            filetype_parameter="project" 
+            file_to_build="`ls -A | grep -i \\.xcodeproj\$`"
+          fi
+          file_to_build=$(echo $file_to_build | awk '{$1=$1;print}')
+
+          echo "Usando esquema: $scheme"
+          echo "Archivo a compilar: $file_to_build"
+          echo "Simulador: $device"
+
+          # Ejecutar pruebas
+          xcodebuild test-without-building \
+            -scheme "$scheme" \
+            -"$filetype_parameter" "$file_to_build" \
+            -destination "platform=$platform,name=$device"
