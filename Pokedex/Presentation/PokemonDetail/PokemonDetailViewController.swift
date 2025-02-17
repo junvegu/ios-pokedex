@@ -66,8 +66,8 @@ final class PokemonDetailViewController: UIViewController, PokemonDetailView {
     
     private lazy var pokemonSpeciesLabel: UILabel = {
         let label = UILabel()
-        label.font = .bederrRegular(18)
-        label.textColor = .lightGray
+        label.font = .bederrLight(12)
+        label.textColor = .label
         return label
     }()
     

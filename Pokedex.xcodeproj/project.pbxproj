@@ -38,7 +38,7 @@
 		AD6F46A12D61AB6C00B34350 /* PokemonStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6F469A2D61AB6C00B34350 /* PokemonStub.swift */; };
 		AD6F46A22D61AB6C00B34350 /* SpyPokemonRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6F469B2D61AB6C00B34350 /* SpyPokemonRemoteDataSource.swift */; };
 		AD6F46A32D61AB6C00B34350 /* GetFirstGenPokemonsUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6F469C2D61AB6C00B34350 /* GetFirstGenPokemonsUseCaseTests.swift */; };
-		AD6F46AD2D61B47000B34350 /* TESTUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6F46AC2D61B47000B34350 /* TESTUI.swift */; };
+		AD6F46AD2D61B47000B34350 /* PokemonsFIrstGenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6F46AC2D61B47000B34350 /* PokemonsFIrstGenUITests.swift */; };
 		AD6F46C32D61BF2900B34350 /* PokemonListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6F46B62D61BDA600B34350 /* PokemonListBuilder.swift */; };
 		AD6F46C42D61BF2900B34350 /* PokemonCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6F46BB2D61BDEF00B34350 /* PokemonCoordinatorFactory.swift */; };
 		AD6F46C52D61BF2900B34350 /* PokemonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6F46B22D61BD4A00B34350 /* PokemonCollectionViewCell.swift */; };
@@ -66,6 +66,7 @@
 		AD6F46ED2D62A60A00B34350 /* PokemonDetailStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6F46EC2D62A60A00B34350 /* PokemonDetailStub.swift */; };
 		AD6F46EF2D63B1A100B34350 /* UIViewControllerPreviewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6F46EE2D63B1A100B34350 /* UIViewControllerPreviewBuilder.swift */; };
 		AD6F46F22D63B60F00B34350 /* PokemonAuraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6F46F12D63B60F00B34350 /* PokemonAuraView.swift */; };
+		ADF0A9712D63BFC500E0DB90 /* GetPokemonDetailUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0A9702D63BFC500E0DB90 /* GetPokemonDetailUseCaseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,7 +118,7 @@
 		AD6F469A2D61AB6C00B34350 /* PokemonStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonStub.swift; sourceTree = "<group>"; };
 		AD6F469B2D61AB6C00B34350 /* SpyPokemonRemoteDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpyPokemonRemoteDataSource.swift; sourceTree = "<group>"; };
 		AD6F469C2D61AB6C00B34350 /* GetFirstGenPokemonsUseCaseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFirstGenPokemonsUseCaseTests.swift; sourceTree = "<group>"; };
-		AD6F46AC2D61B47000B34350 /* TESTUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TESTUI.swift; sourceTree = "<group>"; };
+		AD6F46AC2D61B47000B34350 /* PokemonsFIrstGenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonsFIrstGenUITests.swift; sourceTree = "<group>"; };
 		AD6F46AF2D61BD2000B34350 /* PokemonListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListViewController.swift; sourceTree = "<group>"; };
 		AD6F46B22D61BD4A00B34350 /* PokemonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCollectionViewCell.swift; sourceTree = "<group>"; };
 		AD6F46B42D61BD6A00B34350 /* PokemonCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCollectionLayout.swift; sourceTree = "<group>"; };
@@ -142,6 +143,7 @@
 		AD6F46EC2D62A60A00B34350 /* PokemonDetailStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailStub.swift; sourceTree = "<group>"; };
 		AD6F46EE2D63B1A100B34350 /* UIViewControllerPreviewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerPreviewBuilder.swift; sourceTree = "<group>"; };
 		AD6F46F12D63B60F00B34350 /* PokemonAuraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAuraView.swift; sourceTree = "<group>"; };
+		ADF0A9702D63BFC500E0DB90 /* GetPokemonDetailUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPokemonDetailUseCaseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,7 +228,7 @@
 		AD6F464D2D60D18200B34350 /* PokedexUITests */ = {
 			isa = PBXGroup;
 			children = (
-				AD6F46AC2D61B47000B34350 /* TESTUI.swift */,
+				AD6F46AC2D61B47000B34350 /* PokemonsFIrstGenUITests.swift */,
 			);
 			path = PokedexUITests;
 			sourceTree = "<group>";
@@ -416,6 +418,7 @@
 			isa = PBXGroup;
 			children = (
 				AD6F469C2D61AB6C00B34350 /* GetFirstGenPokemonsUseCaseTests.swift */,
+				ADF0A9702D63BFC500E0DB90 /* GetPokemonDetailUseCaseTests.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -681,6 +684,7 @@
 				AD6F46ED2D62A60A00B34350 /* PokemonDetailStub.swift in Sources */,
 				AD6F469D2D61AB6C00B34350 /* PokemonRepositoryTests.swift in Sources */,
 				AD6F469E2D61AB6C00B34350 /* PokemonRemoteDataSourceTests.swift in Sources */,
+				ADF0A9712D63BFC500E0DB90 /* GetPokemonDetailUseCaseTests.swift in Sources */,
 				AD6F46A12D61AB6C00B34350 /* PokemonStub.swift in Sources */,
 				AD6F46D22D628DF300B34350 /* MockPokemonRemoteDataSource.swift in Sources */,
 			);
@@ -690,7 +694,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD6F46AD2D61B47000B34350 /* TESTUI.swift in Sources */,
+				AD6F46AD2D61B47000B34350 /* PokemonsFIrstGenUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -863,7 +867,6 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -892,7 +895,6 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
