@@ -18,7 +18,7 @@ final class PokemonListViewController: UIViewController, PokemonListView {
     var onCompletion: BDRCompletionFlowBlock?
     
     private lazy var collectionView: UICollectionView = {
-        let layout = RecipesCollectionLayout.createLayout(isTwoColumn: isTwoColumnLayout)
+        let layout = PokemonsCollectionLayout.createLayout(isTwoColumn: isTwoColumnLayout)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -147,7 +147,7 @@ private extension PokemonListViewController {
         
         UIView.animate(withDuration: 0.3) {
             self.collectionView.setCollectionViewLayout(
-                RecipesCollectionLayout.createLayout(isTwoColumn: self.isTwoColumnLayout), animated: true
+                PokemonsCollectionLayout.createLayout(isTwoColumn: self.isTwoColumnLayout), animated: true
             )
         }
     }

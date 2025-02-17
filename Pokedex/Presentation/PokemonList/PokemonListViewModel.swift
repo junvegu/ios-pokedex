@@ -27,7 +27,7 @@ class PokemonListViewModel: BDRViewModelable {
         switch input {
         case .onViewReady, .onRefreshPokemon:
             Task {
-                await getRecipes()
+                await getPokemons()
             }
         case .onSearchPokemon(let text):
             search(query: text)
@@ -45,7 +45,7 @@ class PokemonListViewModel: BDRViewModelable {
         coordinator?.navigateTo(.detail(pokemon))
     }
     
-    private func getRecipes() async {
+    private func getPokemons() async {
         liveData.state = .loading
         do {
             liveData.pokemons = try await getFirstGenPokemonsUseCase.execute()

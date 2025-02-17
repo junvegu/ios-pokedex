@@ -25,9 +25,9 @@ final class PokemonsFIrstGenUITests: XCTestCase {
         let collectionView = app.collectionViews.firstMatch
         XCTAssertTrue(collectionView.waitForExistence(timeout: 5))
 
-        let firstRecipe = collectionView.cells.element(boundBy: 0)
-        XCTAssertTrue(firstRecipe.waitForExistence(timeout: 3))
-        firstRecipe.tap()
+        let firstPokemon = collectionView.cells.element(boundBy: 0)
+        XCTAssertTrue(firstPokemon.waitForExistence(timeout: 3))
+        firstPokemon.tap()
 
         let detailView = app.staticTexts["Bulbasaur"]
         XCTAssertTrue(detailView.waitForExistence(timeout: 3))
@@ -40,8 +40,8 @@ final class PokemonsFIrstGenUITests: XCTestCase {
         searchField.tap()
         searchField.typeText("Charizard")
 
-        let recipeCell = app.cells["6"]
-        XCTAssertTrue(recipeCell.waitForExistence(timeout: 5))
+        let pokemonCell = app.cells["6"]
+        XCTAssertTrue(pokemonCell.waitForExistence(timeout: 5))
     }
 
     func test_toggleLayout() {

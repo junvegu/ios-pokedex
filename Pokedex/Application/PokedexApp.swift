@@ -19,7 +19,7 @@ class PKSetupModulesFacade: NSObject{
     
     func setupModules() {
         BDRCoreNetwork.setup(ConfigBDRNetwork())
-        BDRUIComponents.setup(config: ConfigRecipesTheme())
+        BDRUIComponents.setup(config: ConfigPokemonTheme())
         modules = [BDRUIComponents.sharedInstance]
         setupTestEnviroment()
         BDRUIAppereanceManager.sharedInstance.setupAppereance()
@@ -49,7 +49,7 @@ struct ConfigBDRNetwork: BDRCoreNetworkParameters {
     }
 }
 
-struct ConfigRecipesTheme: BDRUIKitAppereance {
+struct ConfigPokemonTheme: BDRUIKitAppereance {
     var boldItalic: UIFont {
         UIFont(name: "Montserrat-Light", size: UIFont.systemFontSize) ?? UIFont.systemFont(ofSize: UIFont.smallSystemFontSize)
     }

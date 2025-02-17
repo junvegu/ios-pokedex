@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		AD6F462E2D60D18000B34350 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6F462D2D60D18000B34350 /* AppDelegate.swift */; };
 		AD6F46302D60D18000B34350 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6F462F2D60D18000B34350 /* SceneDelegate.swift */; };
-		AD6F46322D60D18000B34350 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6F46312D60D18000B34350 /* ViewController.swift */; };
 		AD6F46352D60D18000B34350 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = AD6F46342D60D18000B34350 /* Base */; };
 		AD6F46372D60D18200B34350 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD6F46362D60D18200B34350 /* Assets.xcassets */; };
 		AD6F463A2D60D18200B34350 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = AD6F46392D60D18200B34350 /* Base */; };
@@ -90,7 +89,6 @@
 		AD6F462A2D60D18000B34350 /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD6F462D2D60D18000B34350 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD6F462F2D60D18000B34350 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AD6F46312D60D18000B34350 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AD6F46342D60D18000B34350 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD6F46362D60D18200B34350 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD6F46392D60D18200B34350 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -206,7 +204,6 @@
 				AD6F466D2D61229900B34350 /* Application */,
 				AD6F467C2D612EC700B34350 /* Presentation */,
 				AD6F466C2D61228D00B34350 /* Resources */,
-				AD6F46312D60D18000B34350 /* ViewController.swift */,
 				AD6F46332D60D18000B34350 /* Main.storyboard */,
 				AD6F46382D60D18200B34350 /* LaunchScreen.storyboard */,
 			);
@@ -643,7 +640,6 @@
 				AD6F46882D612F8D00B34350 /* Pokemon.swift in Sources */,
 				AD6F46E12D629D0F00B34350 /* PokemonTypeResponse.swift in Sources */,
 				AD6F46792D6123C300B34350 /* PokedexApp.swift in Sources */,
-				AD6F46322D60D18000B34350 /* ViewController.swift in Sources */,
 				AD6F46C32D61BF2900B34350 /* PokemonListBuilder.swift in Sources */,
 				AD6F46DF2D629CFA00B34350 /* PokemonDetailResponse.swift in Sources */,
 				AD6F46C42D61BF2900B34350 /* PokemonCoordinatorFactory.swift in Sources */,
