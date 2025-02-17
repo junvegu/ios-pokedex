@@ -38,12 +38,11 @@ public class BDRUIAppereanceManager : NSObject{
         setupTabBarAppereance()
         setupBarButtonItemAppereance()
         setupNavigationBar()
-        
-      
-       // UINavigationBar.appearance().scrollEdgeAppearance = appearance
         setupTabBarItems()
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = .dynamicSearchBarBackground
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).textColor = .dynamicLabelColor
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = UIFont.bederrRegular(14)
-        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = .white
+
     }
     
     
@@ -56,61 +55,65 @@ public class BDRUIAppereanceManager : NSObject{
     }
     
     func setupBarButtonItemAppereance() {
-        let barButtonApperance = UIBarButtonItem.appearance()
-        barButtonApperance.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.bederrRegular(14)], for: UIControl.State())
-        barButtonApperance.tintColor = BDRUIComponents.sharedInstance.config.barButtonTintColor
+        let barButtonAppearance = UIBarButtonItem.appearance()
+        
+        barButtonAppearance.setTitleTextAttributes([
+            NSAttributedString.Key.font: UIFont.bederrRegular(14),
+            NSAttributedString.Key.foregroundColor: UIColor.dynamicLabelColor
+        ], for: .normal)
+        
+        barButtonAppearance.tintColor = UIColor.dynamicLabelColor
 
         if #available(iOS 13.0, *) {
             let backButtonAppearance = UIBarButtonItemAppearance()
-            backButtonAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.label]
+            backButtonAppearance.normal.titleTextAttributes = [
+                .foregroundColor: UIColor.dynamicLabelColor,
+                .font: UIFont.bederrRegular(14)
+            ]
             UINavigationBar.appearance().standardAppearance.backButtonAppearance = backButtonAppearance
         } else {
-            UINavigationBar.appearance().tintColor =  BDRUIComponents.sharedInstance.config.barButtonTintColor
-            UINavigationBar.appearance().barTintColor = .white
+            UINavigationBar.appearance().tintColor = UIColor.dynamicLabelColor
+            UINavigationBar.appearance().barTintColor = UIColor.dynamicBackgroundColor
             UINavigationBar.appearance().isTranslucent = false
             UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         }
     }
+
     
     func setupNavigationBar() {
         let navigationBar = UINavigationBar.appearance()
 
         if #available(iOS 13.0, *) {
-            UINavigationBar.appearance().tintColor = .black
             let appearance = UINavigationBarAppearance()
-           // appearance.configureWithOpaqueBackground()
-           // appearance.backgroundColor = .white
-          //  appearance.shadowColor = nil
-            appearance.titleTextAttributes = [.foregroundColor: UIColor.label,
-                                              .font: UIFont.bederrBold(16)]
-            appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.label,
-                                                   .font: UIFont.bederrBold(24)]
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = .dynamicBackgroundColor
+            appearance.titleTextAttributes = [
+                .foregroundColor: UIColor.dynamicLabelColor,
+                .font: UIFont.bederrBold(16)
+            ]
+            appearance.largeTitleTextAttributes = [
+                .foregroundColor: UIColor.dynamicLabelColor,
+                .font: UIFont.bederrBold(24)
+            ]
+
             UINavigationBar.appearance().standardAppearance = appearance
-         //   UINavigationBar.appearance().compactAppearance = appearance
-          //  UINavigationBar.appearance().scrollEdgeAppearance = appearance
+            UINavigationBar.appearance().compactAppearance = appearance
+            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+            UINavigationBar.appearance().tintColor = .dynamicLabelColor
             
-            
-         //   UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black ,  NSAttributedString.Key.font: UIFont.bederrBold(16)], for: .normal)
-            
-          //  navigationBar.standardAppearance = appearance
-          //  navigationBar.scrollEdgeAppearance = appearance
             navigationBar.prefersLargeTitles = false
         } else {
-            UINavigationBar.appearance().tintColor = .black
-            UINavigationBar.appearance().barTintColor = UIColor.black
-            navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.label]
-            navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.label ,  NSAttributedString.Key.font: UIFont.bederrBold(16)]
-            navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.label, NSAttributedString.Key.font: UIFont.bederrBold(24)]
+            UINavigationBar.appearance().tintColor = .dynamicLabelColor
+            UINavigationBar.appearance().barTintColor = .dynamicBackgroundColor
+            navigationBar.titleTextAttributes = [
+                .foregroundColor: UIColor.dynamicLabelColor,
+                .font: UIFont.bederrBold(16)
+            ]
+            navigationBar.largeTitleTextAttributes = [
+                .foregroundColor: UIColor.dynamicLabelColor,
+                .font: UIFont.bederrBold(24)
+            ]
         }
-        
-          //  navigationBar.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-           // navigationBar.layer.shadowRadius = 2.0
-          //  navigationBar.layer.shadowOpacity = 0.8
-           // navigationBar.layer.shadowColor = UIColor.lightGray.cgColor
-           // navigationBar.layer.masksToBounds = false
-          //  navigationBar.prefersLargeTitles = true
-        //    navigationBar.isTranslucent = true
-    
     }
     
     func setupTabBarItems() {
@@ -118,4 +121,23 @@ public class BDRUIAppereanceManager : NSObject{
         tabBar.isTranslucent = false
         tabBar.tintColor = UIColor.white
     }
+}
+extension UIColor {
+    static var dynamicLabelColor: UIColor {
+        return UIColor { traitCollection in
+            return traitCollection.userInterfaceStyle == .dark ? .white : .black
+        }
+    }
+    
+    static var dynamicBackgroundColor: UIColor {
+        return UIColor { traitCollection in
+            return traitCollection.userInterfaceStyle == .dark ? .black : .white
+        }
+    }
+    
+    static var dynamicSearchBarBackground: UIColor {
+           return UIColor { traitCollection in
+               return traitCollection.userInterfaceStyle == .dark ? UIColor.darkGray : UIColor.white
+           }
+       }
 }

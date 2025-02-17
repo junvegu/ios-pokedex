@@ -55,6 +55,7 @@ class PokemonCollectionViewCell: UICollectionViewCell, ReusableView {
         contentView.addSubview(recipeImageView)
         contentView.addSubview(gradientView)
         contentView.addSubview(titleLabel)
+        recipeImageView.image = UIImage(named: "Placeholder")
         
         NSLayoutConstraint.activate([
             recipeImageView.topAnchor.constraint(equalTo: contentView.topAnchor),

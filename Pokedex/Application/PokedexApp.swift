@@ -75,7 +75,7 @@ struct ConfigRecipesTheme: BDRUIKitAppereance {
     }
     
     var secondaryColor: UIColor {
-        UIColor(named: "SecondaryColor") ?? .black
+        UIColor(named: "BackgroundColor") ?? .black
     }
     
     var accentColor: UIColor {

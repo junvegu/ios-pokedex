@@ -15,6 +15,6 @@ extension PokemonDetailResponse {
             height: height,
             weight: weight,
             types: types.map { PokemonType(name: $0.type.name.capitalized)},
-            description: description)
+            description: "")
     }
 }

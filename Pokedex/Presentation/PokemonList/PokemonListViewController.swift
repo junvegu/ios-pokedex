@@ -29,7 +29,7 @@ final class PokemonListViewController: UIViewController, PokemonListView {
         collectionView.addSubview(refreshControl)
         return collectionView
     }()
-
+    
     private lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action:
@@ -40,7 +40,7 @@ final class PokemonListViewController: UIViewController, PokemonListView {
     
     private lazy var activityIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(style: .large)
-        indicator.color = .primary
+        indicator.color = UIColor.label
         indicator.hidesWhenStopped = true
         indicator.translatesAutoresizingMaskIntoConstraints = false
         return indicator
@@ -50,8 +50,8 @@ final class PokemonListViewController: UIViewController, PokemonListView {
     private var subscribers = Set<AnyCancellable>()
     private let searchController = UISearchController(searchResultsController: nil)
     private var isTwoColumnLayout: Bool = true
-
- 
+    
+    
     private var pokemons: [Pokemon] = [] {
         didSet{
             self.collectionView.reloadData()
@@ -131,7 +131,7 @@ private extension PokemonListViewController {
     
     private func setupNavigationBar() {
         view.backgroundColor = .secondary
-
+        
         let toggleLayoutButton = UIBarButtonItem(
             title: "Change View",
             style: .plain,
@@ -151,7 +151,7 @@ private extension PokemonListViewController {
             )
         }
     }
-
+    
     private func setupSearchBar() {
         definesPresentationContext = true
         navigationItem.searchController = searchController
@@ -161,7 +161,7 @@ private extension PokemonListViewController {
         searchController.searchBar.searchTextField.placeholder = "Busca por nombre o ingrediente"
         searchController.searchBar.searchTextField.font = .bederrRegular(16)
         searchController.searchBar.searchTextField.accessibilityIdentifier = "searchBar"
-
+        
         let textFieldPublisher = NotificationCenter.default
             .publisher(for: UITextField.textDidChangeNotification, object: searchController.searchBar.searchTextField)
             .map {
@@ -178,11 +178,11 @@ private extension PokemonListViewController {
     
     private func setupIndicator() {
         view.addSubview(activityIndicator)
-           
-           NSLayoutConstraint.activate([
-               activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-               activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-           ])
+        
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
     }
     
     private func setupCollectionView() {
@@ -229,3 +229,20 @@ extension PokemonListViewController: UISearchBarDelegate {
         viewModel.bind(.onRefreshPokemon)
     }
 }
+
+#if DEBUG
+import SwiftUI
+
+struct PokemonViewController_Previews: PreviewProvider {
+    static var previews: some View {
+        ViewControllerPreview {
+            let vc = PokemonListViewBuilder()
+                .setGetFirstGenPokemonsUseCase()
+                .setSearchPokemonsUseCase()
+                .build()
+            return vc
+        }
+        .previewDevice("iPhone 14 Pro")
+    }
+}
+#endif

@@ -13,5 +13,4 @@ struct PokemonDetailResponse: Codable {
     let height: Double
     let weight: Double
     let types: [PokemonTypeResponse]
-    let description: String
 }

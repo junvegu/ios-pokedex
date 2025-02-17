@@ -14,9 +14,9 @@ protocol GetPokemonDetailUseCaseProtocol {
 }
 
 final class GetPokemonDetailUseCase: GetPokemonDetailUseCaseProtocol {
-    private let repository: PokemonRepository
+    private let repository: PokemonRepositoryProtocol
 
-    init(repository: PokemonRepository) {
+    init(repository: PokemonRepositoryProtocol = PokemonRepository()) {
         self.repository = repository
     }
 
