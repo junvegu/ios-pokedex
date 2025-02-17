@@ -17,7 +17,7 @@ protocol CoordinatorOuput: AnyObject {
 }
 
 protocol CoordinatorFactory {
-    func makeRecipesCoordinator(router: Routable, transition: BDRTypeTransition) -> Coordinatable & CoordinatorOuput
+    func makePokemonCoordinator(router: Routable, transition: BDRTypeTransition) -> Coordinatable & CoordinatorOuput
 }
 
 final class CoordinatorFactoryDefault {
@@ -26,7 +26,7 @@ final class CoordinatorFactoryDefault {
 }
 
 extension CoordinatorFactoryDefault: CoordinatorFactory {
-    func makeRecipesCoordinator(router: Routable, transition: BDRTypeTransition) -> Coordinatable & CoordinatorOuput {
+    func makePokemonCoordinator(router: Routable, transition: BDRTypeTransition) -> Coordinatable & CoordinatorOuput {
         return PokemonsCoordinator(router: router, transition: transition)
     }
 }

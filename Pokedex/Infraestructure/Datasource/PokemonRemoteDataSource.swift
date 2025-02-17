@@ -38,4 +38,30 @@ final class PokemonRemoteDataSource: PokemonRemoteDataSourceProtocol {
                 }
         }
     }
+    
+    
+    func fetchPokemonDetail(id: Int) async throws -> PokemonDetail {
+        let endpoint = PokemonEndpoint.detail(id: id)
+        return try await withCheckedThrowingContinuation { continuation in
+            networkRequest
+                .setEndpoint(endpoint.path, .v2)
+                .setHttpMethod(endpoint.method)
+                .setParameter(endpoint.parameters)
+                .subscribeAndReceivedData { result in
+                    switch result {
+                    case .success(let dataRaw):
+                        guard let rawData = dataRaw as? Data,
+                              let response = PokemonDetailResponse.decodeJsonData(rawData) else {
+                            continuation.resume(throwing: BDRCoreNetworkError.malformedRequest)
+                            return
+                        }
+                        let pokemons = response.toDomain()
+                        continuation.resume(returning: pokemons)
+                    case .failure(let error):
+                        continuation.resume(throwing: error)
+                    }
+                }
+        }
+    }
+    
 }

@@ -25,7 +25,41 @@ extension Pokemon {
 
 // MARK: - PokemonDataSource Mock
 class PokemonDataSourceMock: PokemonRemoteDataSourceProtocol {
+    private(set) var fetchPokemonsCalled = false
+    private(set) var fetchPokemonDetailCalled = false
+    
+    private(set) var lastLimit: Int?
+    private(set) var lastOffset: Int?
+    private(set) var lastPokemonId: Int?
+    
+    var shouldThrowError = false
+    
+    
+    func fetchPokemonDetail(id: Int) async throws -> PokemonDetail {
+        fetchPokemonDetailCalled = true
+        lastPokemonId = id
+        
+        if shouldThrowError {
+            throw NSError(domain: "PokemonDataSourceError", code: 404, userInfo: [NSLocalizedDescriptionKey: "Pokemon not found"])
+        }
+        if id == 1 {
+            return PokemonDetailStub.bulbasaurDetail
+        } else if id == 4 {
+            return PokemonDetailStub.charmanderDetail
+        } else {
+            throw NSError(domain: "PokemonDataSourceError", code: 404, userInfo: [NSLocalizedDescriptionKey: "Pokemon not found"])
+        }
+    }
+
     func fetchPokemons(limit: Int, offset: Int) async throws -> [Pokemon] {
+        fetchPokemonsCalled = true
+        lastLimit = limit
+        lastOffset = offset
+        
+        if shouldThrowError {
+            throw NSError(domain: "PokemonDataSourceError", code: 500, userInfo: [NSLocalizedDescriptionKey: "Failed to fetch Pokemons"])
+        }
+        
         return Pokemon.allMocks
     }
 }

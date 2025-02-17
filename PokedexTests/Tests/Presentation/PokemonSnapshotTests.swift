@@ -25,6 +25,20 @@ final class PokemonListSnapshotTests: XCTestCase {
         wait(for: [expectation], timeout: 2.0)
         assertSnapshot(of: vc, as: .image, record: false)
     }
+    
+    func testPokemonDetailViewSnapshot() {
+        let vc = givenDetailView()
+        vc.loadViewIfNeeded()
+
+        let expectation = XCTestExpectation(description: "Wait for UI to update")
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 3.0)
+        assertSnapshot(of: vc, as: .image, record: false)
+    }
 }
 
 
@@ -36,6 +50,16 @@ extension PokemonListSnapshotTests {
         let viewController = PokemonListViewBuilder()
             .setGetFirstGenPokemonsUseCase(GetFirstGenPokemonsUseCase(repository: repository))
             .setSearchPokemonsUseCase()
+            .build()
+        return viewController
+    }
+    
+    func givenDetailView() -> UIViewController {
+        let datasource = PokemonDataSourceMock()
+        let repository = PokemonRepository(remoteDataSource: datasource)
+        let viewController = PokemonDetailViewBuilder()
+            .setGetDetailPokemonUseCase(GetPokemonDetailUseCase(repository: repository))
+            .setPokemon(pokemon: .mockCharmander)
             .build()
         return viewController
     }

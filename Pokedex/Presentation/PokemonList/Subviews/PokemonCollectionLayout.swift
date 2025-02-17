@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class RecipesCollectionLayout {
+final class PokemonsCollectionLayout {
     
     static func createLayout(isTwoColumn: Bool) -> UICollectionViewLayout {
         let columns: CGFloat = isTwoColumn ? 2 : 4

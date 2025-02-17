@@ -9,7 +9,7 @@ import Foundation
 
 protocol PokemonModulesFactory {
     func buildListPokemons(coordinator: PokemonsCoordinator) -> PokemonListView?
-    func buildDetailPokemon(with pokemon: Pokemon, coordinator: PokemonsCoordinatorDelegate) -> RYDetailRecipeView?
+    func buildDetailPokemon(with pokemon: Pokemon, coordinator: PokemonsCoordinatorDelegate) -> PokemonDetailView?
 }
 
 final class ModulesFactoryDefault {}
@@ -19,10 +19,14 @@ extension ModulesFactoryDefault: PokemonModulesFactory {
         return PokemonListViewBuilder()
             .setGetFirstGenPokemonsUseCase()
             .setSearchPokemonsUseCase()
+            .setCoordinator(coordinator)
             .build()
     }
     
-    func buildDetailPokemon(with pokemon: Pokemon, coordinator: PokemonsCoordinatorDelegate) -> RYDetailRecipeView? {
-        return nil
+    func buildDetailPokemon(with pokemon: Pokemon, coordinator: PokemonsCoordinatorDelegate) -> PokemonDetailView? {
+        return PokemonDetailViewBuilder()
+            .setGetDetailPokemonUseCase()
+            .setPokemon(pokemon: pokemon)
+            .build()
     }
 }

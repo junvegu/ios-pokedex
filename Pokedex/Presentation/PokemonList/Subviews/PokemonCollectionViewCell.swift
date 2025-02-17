@@ -12,7 +12,7 @@ import BDRUIComponents
 
 class PokemonCollectionViewCell: UICollectionViewCell, ReusableView {
     
-    private lazy var recipeImageView: UIImageView = {
+    private lazy var pokemonImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
@@ -52,15 +52,16 @@ class PokemonCollectionViewCell: UICollectionViewCell, ReusableView {
         contentView.layer.cornerRadius = 16
         contentView.layer.masksToBounds = true
         contentView.addBottomShadow()
-        contentView.addSubview(recipeImageView)
+        contentView.addSubview(pokemonImageView)
         contentView.addSubview(gradientView)
         contentView.addSubview(titleLabel)
+        pokemonImageView.image = UIImage(named: "Placeholder")
         
         NSLayoutConstraint.activate([
-            recipeImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            recipeImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            recipeImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            recipeImageView.heightAnchor.constraint(equalTo: contentView.widthAnchor),
+            pokemonImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            pokemonImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            pokemonImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            pokemonImageView.heightAnchor.constraint(equalTo: contentView.widthAnchor),
             
             gradientView.topAnchor.constraint(equalTo: contentView.topAnchor),
             gradientView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
@@ -69,16 +70,16 @@ class PokemonCollectionViewCell: UICollectionViewCell, ReusableView {
             
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
-            titleLabel.bottomAnchor.constraint(equalTo: recipeImageView.bottomAnchor, constant: -8)
+            titleLabel.bottomAnchor.constraint(equalTo: pokemonImageView.bottomAnchor, constant: -8)
         ])
     }
     
     func configure(with pokemon: Pokemon) {
         titleLabel.text = pokemon.name
         if let image = URL(string: pokemon.imageURL) {
-            recipeImageView.af.setImage(withURL: image)
+            pokemonImageView.af.setImage(withURL: image)
         } else {
-            recipeImageView.image = UIImage(named: "Placeholder")
+            pokemonImageView.image = UIImage(named: "Placeholder")
         }
     }
 }

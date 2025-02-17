@@ -18,21 +18,29 @@ protocol PokemonListViewBuilderProtocol {
 final class PokemonListViewBuilder: PokemonListViewBuilderProtocol {
     private var searchPokemonsUseCase: SearchPokemonsUseCaseProtocol?
     private var getFirstGenPokemonsUseCase: GetFirstGenPokemonsUseCaseProtocol?
-
+    private var coordinator: PokemonsCoordinatorDelegate?
+    
     func setSearchPokemonsUseCase(
         _ useCase: SearchPokemonsUseCaseProtocol = SearchPokemonsUseCase()
     ) -> Self {
         self.searchPokemonsUseCase = useCase
         return self
     }
-
+    
+    func setCoordinator(
+        _ coordinator: PokemonsCoordinatorDelegate?
+    ) -> Self {
+        self.coordinator = coordinator
+        return self
+    }
+    
     func setGetFirstGenPokemonsUseCase(
         _ useCase: GetFirstGenPokemonsUseCaseProtocol = GetFirstGenPokemonsUseCase()
     ) -> Self {
         self.getFirstGenPokemonsUseCase = useCase
         return self
     }
-
+    
     func build() -> PokemonListViewController {
         guard let searchUseCase = searchPokemonsUseCase else {
             fatalError("SearchPokemonsUseCase must be set before building PokemonViewController")
@@ -46,39 +54,9 @@ final class PokemonListViewBuilder: PokemonListViewBuilderProtocol {
             getFirstGenPokemonsUseCase: getFirstGenPokemonsUseCase,
             searchPokemonsUseCase: searchUseCase
         )
+        viewModel.coordinator = coordinator
         let viewController = PokemonListViewController(viewModel: viewModel)
         viewController.navigationItem.title = "Encuentra tu Pokémon"
         return viewController
     }
-}
-
-
-import SwiftUI
-
-struct PokemonViewController_Previews: PreviewProvider {
-    static var previews: some View {
-        ViewControllerPreview {
-            let vc = PokemonListViewBuilder()
-                .setGetFirstGenPokemonsUseCase()
-                .setSearchPokemonsUseCase()
-                .build()
-            return vc
-        }
-        .previewDevice("iPhone 14 Pro")
-    }
-}
-
-/// ViewControllerPreview - Permite usar UIViewController en SwiftUI Previews
-struct ViewControllerPreview<ViewController: UIViewController>: UIViewControllerRepresentable {
-    let viewControllerBuilder: () -> ViewController
-    
-    init(_ viewControllerBuilder: @escaping () -> ViewController) {
-        self.viewControllerBuilder = viewControllerBuilder
-    }
-    
-    func makeUIViewController(context: Context) -> ViewController {
-        return viewControllerBuilder()
-    }
-    
-    func updateUIViewController(_ uiViewController: ViewController, context: Context) {}
 }
