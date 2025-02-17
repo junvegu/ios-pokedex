@@ -24,6 +24,12 @@ final class PokemonDetailViewController: UIViewController, PokemonDetailView {
     private var subscribers = Set<AnyCancellable>()
 
     // MARK: - UI Components
+    private lazy var auraView: PokemonAuraView = {
+        let auraView = PokemonAuraView()
+        auraView.translatesAutoresizingMaskIntoConstraints = false
+        return auraView
+    }()
+    
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = false
@@ -140,6 +146,8 @@ final class PokemonDetailViewController: UIViewController, PokemonDetailView {
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         
+        
+        contentView.addSubview(auraView)
         [pokemonImageView,
          pokemonNumberLabel,
          pokemonNameLabel,
@@ -163,6 +171,7 @@ final class PokemonDetailViewController: UIViewController, PokemonDetailView {
         pokemonNameLabel.linesCornerRadius = 5
         descriptionLabel.numberOfLines = 3
         descriptionLabel.linesCornerRadius = 5
+
     }
     
     // MARK: - Constraints
@@ -192,6 +201,11 @@ final class PokemonDetailViewController: UIViewController, PokemonDetailView {
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             
+            
+            auraView.centerXAnchor.constraint(equalTo: pokemonNameLabel.centerXAnchor),
+            auraView.centerYAnchor.constraint(equalTo: pokemonNameLabel.centerYAnchor, constant: -50),
+                       
+            
             /// Pokemon Image
             pokemonImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
             pokemonImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
@@ -217,6 +231,7 @@ final class PokemonDetailViewController: UIViewController, PokemonDetailView {
             /// About Label
             aboutLabel.topAnchor.constraint(equalTo: typesStackView.bottomAnchor, constant: 32),
             aboutLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            aboutLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             
             /// Description Label
             descriptionLabel.topAnchor.constraint(equalTo: aboutLabel.bottomAnchor, constant: 8),
@@ -253,6 +268,15 @@ final class PokemonDetailViewController: UIViewController, PokemonDetailView {
                     self.heightLabel.text = "📏 \(detail.height) m"
                     self.pokemonImageView.af.setImage(withURL: URL.init(string: detail.base.imageURL)!)
                     self.setupTypes(types: detail.types)
+                    if let color = detail.types.first?.color {
+                        self.auraView.setAuraColor(color)
+                        let gradientLayer = CAGradientLayer()
+                        gradientLayer.frame = view.bounds
+                        gradientLayer.colors = [color.withAlphaComponent(0.5).cgColor, color.withAlphaComponent(0.1).cgColor]
+                        gradientLayer.shouldRasterize = true
+                        view.layer.insertSublayer(gradientLayer, at: 0)
+                    }
+                   
                 case .error(_):
                     self.contentView.hideSkeleton()
                 case .loading:
