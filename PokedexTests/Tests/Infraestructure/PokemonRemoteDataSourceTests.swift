@@ -57,7 +57,7 @@ final class PokemonRemoteDataSourceTests: XCTestCase {
         
         XCTAssertTrue(dataSource.fetchPokemonDetailCalled, "fetchPokemonDetail should be called")
         XCTAssertEqual(dataSource.lastPokemonId, 1)
-        XCTAssertEqual(detail.base.name, "Bulbasaur")
+        XCTAssertEqual(detail.base.name, "bulbasaur")
         XCTAssertEqual(detail.types.count, 2)
     }
     
